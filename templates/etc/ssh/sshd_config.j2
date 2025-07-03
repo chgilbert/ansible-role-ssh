@@ -158,7 +158,7 @@ Banner none
 AcceptEnv LANG LC_*
 
 # override default of no subsystems
-Subsystem	sftp	/usr/lib/openssh/sftp-server
+Subsystem	sftp	/usr/libexec/openssh/sftp-server
 {% if  (sshd_deny_users   | length) > 0
     or (sshd_allow_users  | length) > 0
     or (sshd_deny_groups  | length) > 0
