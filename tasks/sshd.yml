@@ -7,16 +7,16 @@
     name: "{{ sshd_service_name }}"
     state: started
 
-- name: "Create central authorized_keys directory and set permissions"
-  file:
-    path: "{{ sshd_authorized_keys_dir.path }}"
-    state: directory
-    mode: "{{ sshd_authorized_keys_dir.mode }}"
-    owner: "{{ sshd_authorized_keys_dir.owner }}"
-    group: "{{ sshd_authorized_keys_dir.group }}"
-    modification_time: preserve
-    access_time: preserve
-  when: sshd_authorized_keys_dir | length > 0
+#- name: "Create central authorized_keys directory and set permissions"
+#  file:
+#    path: "{{ sshd_authorized_keys_dir.path }}"
+#    state: directory
+#    mode: "{{ sshd_authorized_keys_dir.mode }}"
+#    owner: "{{ sshd_authorized_keys_dir.owner }}"
+#    group: "{{ sshd_authorized_keys_dir.group }}"
+#    modification_time: preserve
+#    access_time: preserve
+#  when: sshd_authorized_keys_dir | length > 0
 
 - name: "Set up etc/ssh/shosts.equiv"
   template:
